@@ -1,5 +1,4 @@
 import setuptools
-from src.WaBach import __version__
 
 setuptools.setup(
     name="WaBach",
