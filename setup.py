@@ -3,13 +3,13 @@ from src.WaBach import __version__
 
 setuptools.setup(
     name="WaBach",
-    version=__version__,
+    version="0.1.1",
     description="Implementation of the Weyl tensor and the Bach tensor into Gravipy",
     url="",
     author="Simon Knoska",
     author_email="knoskas@gmail.com",
     license="BSD",
-    packages=["src/WaBach"],
+    packages=["wabach"],
     include_package_data=True,
     install_requires=["GraviPy == 0.2.0"],
     platforms="any",
