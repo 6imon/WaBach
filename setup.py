@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="WaBach",
-    version="0.1.1",
+    version="0.1.2",
     description="Implementation of the Weyl tensor and the Bach tensor into Gravipy",
     url="",
     author="Simon Knoska",
