@@ -53,6 +53,8 @@ class Bach(Tensor):
         self.Ri = RicciT
         self.W = WeylT
 
+        self._s = None
+
     def _compute_covariant_component(self, idxs):
         component = (sum(sum(self.W.covariantD(idxs[0],-c,idxs[1],-d,c,d) +
                      Rational(1,2)*self.Ri(c,d)*self.W(idxs[0],-c,idxs[1],-d)
@@ -68,7 +70,7 @@ class Bach(Tensor):
         if self._s is None:
             self._s = sum(
                 self(k, l) * self(-k, -l) for k, l in
-                list(variations(self.index_values[1], 4, True))
+                list(variations(self.index_values[1], 2, True))
             ).together().simplify()
             return self._s
         else:
