@@ -63,3 +63,13 @@ class Bach(Tensor):
         if self.apply_tensor_symmetry:
                 self.components.update({(idxs[1], idxs[0]): component})
         return component
+
+    def square(self):
+        if self._s is None:
+            self._s = sum(
+                self(k, l) * self(-k, -l) for k, l in
+                list(variations(self.index_values[1], 4, True))
+            ).together().simplify()
+            return self._s
+        else:
+            return self._s
